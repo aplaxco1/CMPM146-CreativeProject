@@ -7,10 +7,10 @@ public class RockStateManager : MonoBehaviour
 
     RockState currentState;
 
-    static public float attention = 50f;
-    static public float hunger = 50f;
-    static public float thirst = 50f;
-    static public float moss = 50f;
+    public float attention = 10f;
+    public float hunger = 10f;
+    public float thirst = 10f;
+    public float moss = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,8 @@ public class RockStateManager : MonoBehaviour
     }
 
     void OnMouseDown() {
-        SwitchState(new RockHappy());
+        //SwitchState(new RockHappy());
+        Debug.Log("Rock Was Pet!");
+        attention += 5;
     }
 }

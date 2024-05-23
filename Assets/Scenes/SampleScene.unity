@@ -334,6 +334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832dd34e329626d42a30c93702777efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attention: 10
+  hunger: 10
+  thirst: 10
+  moss: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

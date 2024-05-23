@@ -11,6 +11,9 @@ public class RockSad : RockState
 
     public override void UpdateState(RockStateManager rock)
     {
+        if (rock.attention > 0f) {
+            rock.SwitchState(new RockHappy());
+        }
     }
     
 }
