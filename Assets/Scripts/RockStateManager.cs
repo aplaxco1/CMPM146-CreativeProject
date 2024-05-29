@@ -9,7 +9,8 @@ public class RockStateManager : MonoBehaviour
 
     // used for player interactions
     PlayerState currentSubState;
-    public GameObject hand; // used for the lil pet animation
+    public GameObject hand;
+    public GameObject food;
 
     public float attention = 10f;
     public float hunger = 10f;
@@ -19,9 +20,6 @@ public class RockStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hand = GameObject.Find("Hand");
-        hand.SetActive(false);
-
         currentState = new RockHappy();
         currentState.EnterState(this);
         currentSubState = null;
@@ -31,7 +29,7 @@ public class RockStateManager : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
-        if (currentSubState != null) {currentSubState.UpdateState(this); }
+        if (currentSubState != null) { currentSubState.UpdateState(this); }
     }
 
     public void SwitchState(RockState state) {
@@ -41,13 +39,14 @@ public class RockStateManager : MonoBehaviour
 
     public void SwitchSubstate(PlayerState state) {
         currentSubState = state;
-        state.EnterState(this);
+        if (state != null) { state.EnterState(this); }
     }
 
-    void OnMouseDown() {
-        //SwitchState(new RockHappy());
-        if (currentSubState == null) {
-            SwitchSubstate(new PetRockState());
-        }
+    public void switchToFeedState() {
+        if (currentSubState == null) { SwitchSubstate(new FeedRockState()); }
+    }
+
+    public void switchToPetState() {
+        if (currentSubState == null) { SwitchSubstate(new PetRockState()); }
     }
 }
