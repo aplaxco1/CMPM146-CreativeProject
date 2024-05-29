@@ -9,12 +9,16 @@ public class StatsManager : MonoBehaviour
     public Slider thirstSlider;
     public Slider attentionSlider;
 
-    private float rateOfDecay = 20f;
-    private float rateOfGrowth = 5f;
+    private float rate = 20f;
+    private float rateOfDecay;
+    private float rateOfGrowth;
+    private bool isHungry = false;
     private float decreaseInterval = 5f; //144 shld decrease to 0 over 2 hours //1800f; // 30 minutes in seconds
 
     void Start()
     {
+        rateOfDecay = rate;
+        rateOfGrowth = rate;
         happinessSlider.value = 200;
         hungerSlider.value = 100;
         thirstSlider.value = 100;
@@ -31,8 +35,9 @@ public class StatsManager : MonoBehaviour
 
             DecreaseValue(happinessSlider);
             DecreaseValue(hungerSlider);
-            DecreaseValue(thirstSlider);
+            DecreaseThirst();
             DecreaseValue(attentionSlider);
+            checkHunger();
         }
     }
 
@@ -41,6 +46,13 @@ public class StatsManager : MonoBehaviour
         if (slider.value > 0)
         {
             slider.value -= rateOfDecay;
+        }
+    }
+
+    void DecreaseThirst() {
+        if (thirstSlider.value > 0)
+        {
+            thirstSlider.value -= rateOfDecay*1.5f;
         }
     }
 
@@ -66,9 +78,36 @@ public class StatsManager : MonoBehaviour
 
     void IncreaseValue(Slider slider)
     {
+        // if the rock is bored, there is a 50% chance the action does nothing
+        if (checkBored()) { 
+            if (Random.value < 0.5f) {
+                Debug.Log("rock is not paying attention");
+                return;
+            }
+        }
+
         if (slider.value < slider.maxValue)
         {
             slider.value += rateOfGrowth;
         }
+    }
+
+    void checkHunger() {
+        if (hungerSlider.value < thirstSlider.value && hungerSlider.value < attentionSlider.value && isHungry==false) {
+                isHungry = true;
+                rateOfDecay *= 1.5f;
+                Debug.Log("rate of decay increased");
+        } else if (hungerSlider.value >= thirstSlider.value && hungerSlider.value >= attentionSlider.value) {
+                isHungry = false;
+                rateOfDecay = rate;
+        }
+    }
+
+    bool checkBored() {
+        if (attentionSlider.value < thirstSlider.value && attentionSlider.value < hungerSlider.value) {
+            Debug.Log("rock is bored");
+            return true;
+        }
+        return false;
     }
 }

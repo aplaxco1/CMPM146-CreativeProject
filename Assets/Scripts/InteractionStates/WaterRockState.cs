@@ -29,7 +29,7 @@ public class WaterRockState : PlayerState
     void waterAnim(RockStateManager rock) {
         if (rock.water.transform.eulerAngles.z >= 350) { animSpeed = -0.5f; }
         else if (rock.water.transform.eulerAngles.z <= 280) { animSpeed = 0.5f; }
-        Debug.Log(rock.water.transform.eulerAngles.z);
+        // Debug.Log(rock.water.transform.eulerAngles.z);
         rock.water.transform.eulerAngles = new Vector3(rock.water.transform.eulerAngles.x, rock.water.transform.eulerAngles.y, rock.water.transform.eulerAngles.z + animSpeed);
     }
     
