@@ -11,6 +11,7 @@ public class RockStateManager : MonoBehaviour
     PlayerState currentSubState;
     public GameObject hand;
     public GameObject food;
+    public GameObject water;
 
     public float attention = 10f;
     public float hunger = 10f;
@@ -44,6 +45,10 @@ public class RockStateManager : MonoBehaviour
 
     public void switchToFeedState() {
         if (currentSubState == null) { SwitchSubstate(new FeedRockState()); }
+    }
+
+    public void switchToWaterState() {
+        if (currentSubState == null) { SwitchSubstate(new WaterRockState()); }
     }
 
     public void switchToPetState() {
