@@ -576,6 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832dd34e329626d42a30c93702777efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StatsManager: {fileID: 0}
   hand: {fileID: 2128178402897063374}
   food: {fileID: 2230885676114972652}
   water: {fileID: 2018240406037093035}

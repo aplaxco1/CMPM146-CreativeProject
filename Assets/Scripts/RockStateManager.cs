@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RockStateManager : MonoBehaviour
 {
-    public GameObject StatsManager; // used to obtain values from the sliders
+    public StatsManager StatsManager; // used to obtain values from the sliders
     RockState currentState;
 
     // used for player interactions
@@ -65,9 +65,9 @@ public class RockStateManager : MonoBehaviour
     }
 
     public void updateStatsFromSliders() {
-        attention = StatsManager.GetComponent<StatsManager>().attentionSlider.value;
-        hunger = StatsManager.GetComponent<StatsManager>().hungerSlider.value;
-        thirst = StatsManager.GetComponent<StatsManager>().thirstSlider.value;
-        moss = StatsManager.GetComponent<StatsManager>().happinessSlider.value;
+        attention = StatsManager.attentionSlider.value;
+        hunger = StatsManager.hungerSlider.value;
+        thirst = StatsManager.thirstSlider.value;
+        moss = StatsManager.happinessSlider.value;
     }
 }

@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class FeedRockState : PlayerState
 {
-    private float feedTimer = 5f;
+    private float feedTimer = 3f;
     private float animSpeed = 0.005f;
 
     public override void EnterState(RockStateManager rock)
     {
-        Debug.Log("Rock is being Fed!");
         rock.food.SetActive(true);
-        feedTimer = 5f;
+        feedTimer = 3f;
     }
 
     public override void UpdateState(RockStateManager rock)
@@ -19,9 +18,9 @@ public class FeedRockState : PlayerState
         feedAnim(rock);
         feedTimer -= Time.deltaTime;
         if (feedTimer <= 0) {
-            rock.hunger += 10;
+            rock.StatsManager.IncreaseHunger();
+            rock.StatsManager.IncreaseHappiness();
             rock.food.SetActive(false);
-            Debug.Log("Rock has been fed!");
             rock.SwitchSubstate(null);
         }
     }

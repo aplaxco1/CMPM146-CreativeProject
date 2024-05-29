@@ -741,18 +741,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1560702900}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: IncreaseAttention
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &266586006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,30 +1300,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560702900}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: IncreaseThirst
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1560702900}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: IncreaseHappiness
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 728642641}
         m_TargetAssemblyTypeName: RockStateManager, Assembly-CSharp
         m_MethodName: switchToWaterState
@@ -2487,18 +2451,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560702900}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: IncreaseHappiness
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 728642641}
         m_TargetAssemblyTypeName: RockStateManager, Assembly-CSharp
         m_MethodName: switchToGroomState
@@ -3629,30 +3581,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1560702900}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: IncreaseHunger
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1560702900}
-        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
-        m_MethodName: IncreaseHappiness
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 728642641}
         m_TargetAssemblyTypeName: RockStateManager, Assembly-CSharp
         m_MethodName: switchToFeedState
@@ -3864,7 +3792,7 @@ PrefabInstance:
     - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
       propertyPath: StatsManager
       value: 
-      objectReference: {fileID: 1560702899}
+      objectReference: {fileID: 1560702900}
     - target: {fileID: 2113302287644368523, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
