@@ -9,6 +9,8 @@ public class StatsManager : MonoBehaviour
     public Slider thirstSlider;
     public Slider attentionSlider;
 
+    private float rateOfDecay = 20f;
+    private float rateOfGrowth = 5f;
     private float decreaseInterval = 5f; //144 shld decrease to 0 over 2 hours //1800f; // 30 minutes in seconds
 
     void Start()
@@ -38,7 +40,7 @@ public class StatsManager : MonoBehaviour
     {
         if (slider.value > 0)
         {
-            slider.value -= 1;
+            slider.value -= rateOfDecay;
         }
     }
 
@@ -66,7 +68,7 @@ public class StatsManager : MonoBehaviour
     {
         if (slider.value < slider.maxValue)
         {
-            slider.value += 1;
+            slider.value += rateOfGrowth;
         }
     }
 }
