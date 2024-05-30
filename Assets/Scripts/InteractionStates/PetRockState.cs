@@ -9,7 +9,7 @@ public class PetRockState : PlayerState
 
     public override void EnterState(RockStateManager rock)
     {
-        Debug.Log("Rock is being Pet!");
+        Debug.Log("Rock is being pet!");
         rock.hand.SetActive(true);
         petTimer = 2f;
     }

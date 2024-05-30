@@ -11,8 +11,8 @@ public class RockHappy : RockState
     }
 
     public override void UpdateState(RockStateManager rock) {
-        if (rock.attention == 0) {
-            rock.SwitchState(new RockSad());
+        if (rock.StatsManager.happinessSlider.value < 50f) {
+            rock.SwitchState(new RockNeutral());
         }
         happyAnim(rock.gameObject);
     }

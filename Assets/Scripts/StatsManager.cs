@@ -8,21 +8,24 @@ public class StatsManager : MonoBehaviour
     public Slider hungerSlider;
     public Slider thirstSlider;
     public Slider attentionSlider;
+    public Slider hygieneSlider;
 
-    private float rate = 20f;
+    private float rate = 5f;
     private float rateOfDecay;
-    private float rateOfGrowth;
+    private float rateOfGrowth = 20f;
     private bool isHungry = false;
     private float decreaseInterval = 5f; //144 shld decrease to 0 over 2 hours //1800f; // 30 minutes in seconds
 
     void Start()
     {
         rateOfDecay = rate;
-        rateOfGrowth = rate;
-        happinessSlider.value = 200;
+        
         hungerSlider.value = 100;
         thirstSlider.value = 100;
         attentionSlider.value = 100;
+        hygieneSlider.value = 100;
+
+        happinessSlider.value = calculateHappiness();
 
         StartCoroutine(DecreaseStats());
     }
@@ -32,12 +35,13 @@ public class StatsManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(decreaseInterval);
-
-            DecreaseValue(happinessSlider);
             DecreaseValue(hungerSlider);
             DecreaseThirst();
             DecreaseValue(attentionSlider);
+            DecreaseValue(hygieneSlider);
             checkHunger();
+
+            happinessSlider.value = calculateHappiness();
         }
     }
 
@@ -54,6 +58,10 @@ public class StatsManager : MonoBehaviour
         {
             thirstSlider.value -= rateOfDecay*1.5f;
         }
+    }
+
+    public void DecreaseHygiene() {
+        DecreaseValue(hygieneSlider);
     }
 
     public void IncreaseHappiness()
@@ -76,6 +84,11 @@ public class StatsManager : MonoBehaviour
         IncreaseValue(attentionSlider);
     }
 
+    public void IncreaseHygiene()
+    {
+        IncreaseValue(hygieneSlider);
+    }
+
     void IncreaseValue(Slider slider)
     {
         // if the rock is bored, there is a 50% chance the action does nothing
@@ -93,21 +106,26 @@ public class StatsManager : MonoBehaviour
     }
 
     void checkHunger() {
-        if (hungerSlider.value < thirstSlider.value && hungerSlider.value < attentionSlider.value && isHungry==false) {
+        if (hungerSlider.value < thirstSlider.value && hungerSlider.value < attentionSlider.value && hungerSlider.value < hygieneSlider.value && isHungry==false) {
                 isHungry = true;
                 rateOfDecay *= 1.5f;
                 Debug.Log("rate of decay increased");
-        } else if (hungerSlider.value >= thirstSlider.value && hungerSlider.value >= attentionSlider.value) {
+        } else if (hungerSlider.value >= thirstSlider.value && hungerSlider.value >= attentionSlider.value && hungerSlider.value >= hygieneSlider.value) {
                 isHungry = false;
                 rateOfDecay = rate;
         }
     }
 
     bool checkBored() {
-        if (attentionSlider.value < thirstSlider.value && attentionSlider.value < hungerSlider.value) {
+        if (attentionSlider.value < thirstSlider.value && attentionSlider.value < hungerSlider.value && attentionSlider.value < hygieneSlider.value) {
             Debug.Log("rock is bored");
             return true;
         }
         return false;
+    }
+
+    float calculateHappiness() {
+        float average = hungerSlider.value + thirstSlider.value + attentionSlider.value + hygieneSlider.value;
+        return average/4;
     }
 }

@@ -9,8 +9,11 @@ public class RockNeutral : RockState
     }
 
     public override void UpdateState(RockStateManager rock) {
-        if (rock.attention > 50f) {
+        if (rock.StatsManager.happinessSlider.value >= 50f) {
             rock.SwitchState(new RockHappy());
+        }
+        if (rock.StatsManager.happinessSlider.value < 25f) {
+            rock.SwitchState(new RockSad());
         }
     }
 }

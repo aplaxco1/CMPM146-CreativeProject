@@ -9,6 +9,7 @@ public class FeedRockState : PlayerState
 
     public override void EnterState(RockStateManager rock)
     {
+        Debug.Log("Rock is being fed!");
         rock.food.SetActive(true);
         feedTimer = 3f;
     }

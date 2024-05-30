@@ -68,6 +68,6 @@ public class RockStateManager : MonoBehaviour
         attention = StatsManager.attentionSlider.value;
         hunger = StatsManager.hungerSlider.value;
         thirst = StatsManager.thirstSlider.value;
-        moss = StatsManager.happinessSlider.value;
+        moss = StatsManager.hygieneSlider.value;
     }
 }

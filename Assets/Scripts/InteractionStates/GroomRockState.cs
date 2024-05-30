@@ -12,6 +12,7 @@ public class GroomRockState : PlayerState
 
     public override void EnterState(RockStateManager rock)
     {
+        Debug.Log("Rock's hair is being trimmed!");
         rock.scissors.SetActive(true);
         groomTimer = 6f;
         closed_scissors = rock.scissors.transform.Find("closed").gameObject;
@@ -23,6 +24,7 @@ public class GroomRockState : PlayerState
         groomAnim(rock);
         groomTimer -= Time.deltaTime;
         if (groomTimer <= 0) {
+            rock.StatsManager.IncreaseHygiene();
             rock.StatsManager.IncreaseHappiness();
             rock.scissors.SetActive(false);
             rock.SwitchSubstate(null);

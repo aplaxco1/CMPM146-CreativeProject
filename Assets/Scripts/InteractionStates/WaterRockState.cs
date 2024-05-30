@@ -9,6 +9,7 @@ public class WaterRockState : PlayerState
 
     public override void EnterState(RockStateManager rock)
     {
+        Debug.Log("Rock is being watered!");
         rock.water.SetActive(true);
         rock.water.transform.eulerAngles = new Vector3(rock.water.transform.eulerAngles.x, rock.water.transform.eulerAngles.y, 350);
         waterTimer = 3f;
@@ -20,6 +21,7 @@ public class WaterRockState : PlayerState
         waterTimer -= Time.deltaTime;
         if (waterTimer <= 0) {
             rock.StatsManager.IncreaseThirst();
+            rock.StatsManager.DecreaseHygiene();
             rock.StatsManager.IncreaseHappiness();
             rock.water.SetActive(false);
             rock.SwitchSubstate(null);
