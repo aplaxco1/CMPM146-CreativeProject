@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 public class RockStateManager : MonoBehaviour
 {
-
+    public StatsManager StatsManager; // used to obtain values from the sliders
     RockState currentState;
 
     // used for player interactions
@@ -14,22 +15,25 @@ public class RockStateManager : MonoBehaviour
     public GameObject water;
     public GameObject scissors;
 
-    public float attention = 10f;
-    public float hunger = 10f;
-    public float thirst = 10f;
-    public float moss = 10f;
+    public float attention;
+    public float hunger;
+    public float thirst;
+    public float moss;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentState = new RockHappy();
+        currentState = new RockNeutral();
         currentState.EnterState(this);
         currentSubState = null;
+        
+        updateStatsFromSliders();
     }
 
     // Update is called once per frame
     void Update()
     {
+        updateStatsFromSliders();
         currentState.UpdateState(this);
         if (currentSubState != null) { currentSubState.UpdateState(this); }
     }
@@ -58,5 +62,12 @@ public class RockStateManager : MonoBehaviour
 
     public void switchToPetState() {
         if (currentSubState == null) { SwitchSubstate(new PetRockState()); }
+    }
+
+    public void updateStatsFromSliders() {
+        attention = StatsManager.attentionSlider.value;
+        hunger = StatsManager.hungerSlider.value;
+        thirst = StatsManager.thirstSlider.value;
+        moss = StatsManager.hygieneSlider.value;
     }
 }
