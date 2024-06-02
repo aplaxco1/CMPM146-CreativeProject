@@ -10,8 +10,8 @@ public class StatsManager : MonoBehaviour
     public Slider attentionSlider;
     public Slider hygieneSlider;
 
-    private float rate = 5f;
-    private float rateOfDecay;
+    public float rate = 5f;
+    public float rateOfDecay;
     private float rateOfGrowth = 20f;
     private bool isHungry = false;
     private float decreaseInterval = 5f; //144 shld decrease to 0 over 2 hours //1800f; // 30 minutes in seconds
@@ -39,7 +39,7 @@ public class StatsManager : MonoBehaviour
             DecreaseThirst();
             DecreaseValue(attentionSlider);
             DecreaseValue(hygieneSlider);
-            checkHunger();
+            //checkHunger();
 
             happinessSlider.value = calculateHappiness();
         }
@@ -105,16 +105,16 @@ public class StatsManager : MonoBehaviour
         }
     }
 
-    void checkHunger() {
-        if (hungerSlider.value < thirstSlider.value && hungerSlider.value < attentionSlider.value && hungerSlider.value < hygieneSlider.value && isHungry==false) {
-                isHungry = true;
-                rateOfDecay *= 1.5f;
-                Debug.Log("rate of decay increased");
-        } else if (hungerSlider.value >= thirstSlider.value && hungerSlider.value >= attentionSlider.value && hungerSlider.value >= hygieneSlider.value) {
-                isHungry = false;
-                rateOfDecay = rate;
-        }
-    }
+    // void checkHunger() {
+    //     if (hungerSlider.value < thirstSlider.value && hungerSlider.value < attentionSlider.value && hungerSlider.value < hygieneSlider.value && isHungry==false) {
+    //             isHungry = true;
+    //             rateOfDecay *= 1.5f;
+    //             Debug.Log("rate of decay increased");
+    //     } else if (hungerSlider.value >= thirstSlider.value && hungerSlider.value >= attentionSlider.value && hungerSlider.value >= hygieneSlider.value) {
+    //             isHungry = false;
+    //             rateOfDecay = rate;
+    //     }
+    // }
 
     bool checkBored() {
         if (attentionSlider.value < thirstSlider.value && attentionSlider.value < hungerSlider.value && attentionSlider.value < hygieneSlider.value) {
