@@ -6,13 +6,14 @@ public class RockSad : RockState
 {
     public override void EnterState(RockStateManager rock)
     {
-        Debug.Log("Rock is Sad!");
+        rock.stateText.text = "Current State: Sad";
+        // Debug.Log("Rock is Sad!");
     }
 
     public override void UpdateState(RockStateManager rock)
     {
-        if (rock.StatsManager.happinessSlider.value >= 25f) {
-            rock.SwitchState(new RockNeutral());
+        if (rock.StatsManager.happinessSlider.value >= 15f) {
+            rock.getHighestStat();
         }
     }
     

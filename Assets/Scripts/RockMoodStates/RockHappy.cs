@@ -7,11 +7,12 @@ public class RockHappy : RockState
     private float movement = 0.01f;
 
     public override void EnterState(RockStateManager rock) {
-        Debug.Log("Rock is Happy!");
+        rock.stateText.text = "Current State: Happy";
+        // Debug.Log("Rock is Happy!");
     }
 
     public override void UpdateState(RockStateManager rock) {
-        if (rock.StatsManager.happinessSlider.value < 50f) {
+        if (rock.StatsManager.happinessSlider.value < 75f) {
             rock.SwitchState(new RockNeutral());
         }
         happyAnim(rock.gameObject);

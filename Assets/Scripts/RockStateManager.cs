@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using TMPro;
 
 public class RockStateManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class RockStateManager : MonoBehaviour
     public float hunger;
     public float thirst;
     public float moss;
+
+    public TMP_Text stateText;
 
     // Start is called before the first frame update
     void Start()
@@ -69,5 +72,20 @@ public class RockStateManager : MonoBehaviour
         hunger = StatsManager.hungerSlider.value;
         thirst = StatsManager.thirstSlider.value;
         moss = StatsManager.hygieneSlider.value;
+    }
+
+    public void getHighestStat() {
+        if (attention <= hunger && attention <= thirst && attention <= moss && !(currentState is RockBored)) {
+            SwitchState(new RockBored());
+        }
+        else if (hunger <= attention && hunger <= thirst && hunger <= moss && !(currentState is RockHungry)) {
+            SwitchState(new RockHungry());
+        }
+        else if (thirst <= attention && thirst <= hunger && thirst <= moss && !(currentState is RockThirsty)) {
+            SwitchState(new RockThirsty());
+        }
+        else {
+            SwitchState(new RockMossy());
+        }
     }
 }
