@@ -19,7 +19,12 @@ public class FeedRockState : PlayerState
         feedAnim(rock);
         feedTimer -= Time.deltaTime;
         if (feedTimer <= 0) {
-            rock.StatsManager.IncreaseHunger();
+            if (!(rock.currentState is RockBored)) {
+                rock.StatsManager.IncreaseHunger();
+            }
+            else if (Random.value > 0.5f){
+                rock.StatsManager.IncreaseHunger();
+            }
             rock.food.SetActive(false);
             rock.SwitchSubstate(null);
         }

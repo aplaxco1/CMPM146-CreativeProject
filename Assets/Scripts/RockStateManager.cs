@@ -7,21 +7,24 @@ using TMPro;
 public class RockStateManager : MonoBehaviour
 {
     public StatsManager StatsManager; // used to obtain values from the sliders
-    RockState currentState;
 
+    [Header("Current Rock States")]
+    public RockState currentState;
+    public PlayerState currentSubState;
+    public TMP_Text stateText;
+
+    [Header("Interaction Animations")]
     // used for player interactions
-    PlayerState currentSubState;
     public GameObject hand;
     public GameObject food;
     public GameObject water;
     public GameObject scissors;
 
+    [Header("Stat Values")]    
     public float attention;
     public float hunger;
     public float thirst;
     public float moss;
-
-    public TMP_Text stateText;
 
     // Start is called before the first frame update
     void Start()

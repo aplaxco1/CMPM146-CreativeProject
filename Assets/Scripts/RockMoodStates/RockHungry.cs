@@ -7,7 +7,7 @@ public class RockHungry : RockState
     public override void EnterState(RockStateManager rock)
     {
         rock.stateText.text = "Current State: Hungry";
-        rock.StatsManager.rateOfDecay *= 1.5
+        rock.StatsManager.rateOfDecay *= 1.5f;
         // Debug.Log("Rock is Hungry!");
     }
 

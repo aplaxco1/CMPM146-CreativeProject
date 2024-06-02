@@ -20,8 +20,14 @@ public class WaterRockState : PlayerState
         waterAnim(rock);
         waterTimer -= Time.deltaTime;
         if (waterTimer <= 0) {
-            rock.StatsManager.IncreaseThirst();
-            rock.StatsManager.DecreaseHygiene();
+            if (!(rock.currentState is RockBored)) {
+                rock.StatsManager.IncreaseThirst();
+                rock.StatsManager.DecreaseHygiene();
+            }
+            else if (Random.value > 0.5f){
+                rock.StatsManager.IncreaseThirst();
+                rock.StatsManager.DecreaseHygiene();
+            }
             rock.water.SetActive(false);
             rock.SwitchSubstate(null);
         }

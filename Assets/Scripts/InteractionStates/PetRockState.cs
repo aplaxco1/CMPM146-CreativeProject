@@ -19,7 +19,12 @@ public class PetRockState : PlayerState
         petAnim(rock);
         petTimer -= Time.deltaTime;
         if (petTimer <= 0) {
-            rock.StatsManager.IncreaseAttention();
+            if (!(rock.currentState is RockBored)) {
+                rock.StatsManager.IncreaseAttention();
+            }
+            else if (Random.value > 0.5f){
+                rock.StatsManager.IncreaseAttention();
+            }
             rock.hand.SetActive(false);
             Debug.Log("Rock has been pet!");
             rock.SwitchSubstate(null);

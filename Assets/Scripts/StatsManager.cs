@@ -13,7 +13,7 @@ public class StatsManager : MonoBehaviour
     public float rate = 5f;
     public float rateOfDecay;
     private float rateOfGrowth = 20f;
-    private bool isHungry = false;
+    //private bool isHungry = false;
     private float decreaseInterval = 5f; //144 shld decrease to 0 over 2 hours //1800f; // 30 minutes in seconds
 
     void Start()
@@ -91,13 +91,13 @@ public class StatsManager : MonoBehaviour
 
     void IncreaseValue(Slider slider)
     {
-        // if the rock is bored, there is a 50% chance the action does nothing
-        if (checkBored()) { 
-            if (Random.value < 0.5f) {
-                Debug.Log("rock is not paying attention");
-                return;
-            }
-        }
+        // // if the rock is bored, there is a 50% chance the action does nothing
+        // if (checkBored()) { 
+        //     if (Random.value < 0.5f) {
+        //         Debug.Log("rock is not paying attention");
+        //         return;
+        //     }
+        // }
 
         if (slider.value < slider.maxValue)
         {
@@ -116,13 +116,13 @@ public class StatsManager : MonoBehaviour
     //     }
     // }
 
-    bool checkBored() {
-        if (attentionSlider.value < thirstSlider.value && attentionSlider.value < hungerSlider.value && attentionSlider.value < hygieneSlider.value) {
-            Debug.Log("rock is bored");
-            return true;
-        }
-        return false;
-    }
+    // bool checkBored() {
+    //     if (attentionSlider.value < thirstSlider.value && attentionSlider.value < hungerSlider.value && attentionSlider.value < hygieneSlider.value) {
+    //         Debug.Log("rock is bored");
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
     float calculateHappiness() {
         float average = hungerSlider.value + thirstSlider.value + attentionSlider.value + hygieneSlider.value;
