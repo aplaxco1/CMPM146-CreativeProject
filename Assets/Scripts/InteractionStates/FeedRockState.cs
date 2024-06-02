@@ -20,7 +20,6 @@ public class FeedRockState : PlayerState
         feedTimer -= Time.deltaTime;
         if (feedTimer <= 0) {
             rock.StatsManager.IncreaseHunger();
-            rock.StatsManager.IncreaseHappiness();
             rock.food.SetActive(false);
             rock.SwitchSubstate(null);
         }

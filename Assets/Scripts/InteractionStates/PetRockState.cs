@@ -20,7 +20,6 @@ public class PetRockState : PlayerState
         petTimer -= Time.deltaTime;
         if (petTimer <= 0) {
             rock.StatsManager.IncreaseAttention();
-            rock.StatsManager.IncreaseHappiness();
             rock.hand.SetActive(false);
             Debug.Log("Rock has been pet!");
             rock.SwitchSubstate(null);

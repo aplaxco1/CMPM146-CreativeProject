@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaterRockState : PlayerState
 {
     private float waterTimer = 3f;
-    private float animSpeed = 0.5f;
+    private float animSpeed = 0.25f;
 
     public override void EnterState(RockStateManager rock)
     {
@@ -22,15 +22,14 @@ public class WaterRockState : PlayerState
         if (waterTimer <= 0) {
             rock.StatsManager.IncreaseThirst();
             rock.StatsManager.DecreaseHygiene();
-            rock.StatsManager.IncreaseHappiness();
             rock.water.SetActive(false);
             rock.SwitchSubstate(null);
         }
     }
 
     void waterAnim(RockStateManager rock) {
-        if (rock.water.transform.eulerAngles.z >= 350) { animSpeed = -0.5f; }
-        else if (rock.water.transform.eulerAngles.z <= 300) { animSpeed = 0.5f; }
+        if (rock.water.transform.eulerAngles.z >= 350) { animSpeed = -0.25f; }
+        else if (rock.water.transform.eulerAngles.z <= 300) { animSpeed = 0.25f; }
         rock.water.transform.eulerAngles = new Vector3(rock.water.transform.eulerAngles.x, rock.water.transform.eulerAngles.y, rock.water.transform.eulerAngles.z + animSpeed);
     }
     

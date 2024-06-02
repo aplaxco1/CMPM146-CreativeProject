@@ -25,7 +25,6 @@ public class GroomRockState : PlayerState
         groomTimer -= Time.deltaTime;
         if (groomTimer <= 0) {
             rock.StatsManager.IncreaseHygiene();
-            rock.StatsManager.IncreaseHappiness();
             rock.scissors.SetActive(false);
             rock.SwitchSubstate(null);
         }
