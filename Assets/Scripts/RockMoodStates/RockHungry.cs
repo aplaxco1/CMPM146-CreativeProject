@@ -14,10 +14,11 @@ public class RockHungry : RockState
     public override void UpdateState(RockStateManager rock)
     {
         if (rock.StatsManager.happinessSlider.value >= 50f) {
-            rock.SwitchState(new RockNeutral());
             rock.StatsManager.rateOfDecay = rock.StatsManager.rate;
+            rock.SwitchState(new RockNeutral());
         }
         if (rock.hunger > rock.attention || rock.hunger > rock.thirst || rock.hunger > rock.moss) {
+            rock.StatsManager.rateOfDecay = rock.StatsManager.rate;
             rock.getHighestStat();
         } 
     }
