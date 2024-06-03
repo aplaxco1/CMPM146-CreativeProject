@@ -24,8 +24,12 @@ public class GroomRockState : PlayerState
         groomAnim(rock);
         groomTimer -= Time.deltaTime;
         if (groomTimer <= 0) {
-            rock.StatsManager.IncreaseHygiene();
-            rock.StatsManager.IncreaseHappiness();
+            if (!(rock.currentState is RockBored)) {
+                rock.StatsManager.IncreaseHygiene();
+            }
+            else if (Random.value > 0.5f){
+                rock.StatsManager.IncreaseHygiene();
+            }
             rock.scissors.SetActive(false);
             rock.SwitchSubstate(null);
         }
