@@ -12,6 +12,7 @@ public class RockStateManager : MonoBehaviour
     public RockState currentState;
     public PlayerState currentSubState;
     public TMP_Text stateText;
+    public TextMeshProUGUI dialougeText;
 
     [Header("Interaction Animations")]
     // used for player interactions
