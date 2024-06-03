@@ -25,6 +25,9 @@ public class PetRockState : PlayerState
             else if (Random.value > 0.5f){
                 rock.StatsManager.IncreaseAttention();
             }
+            else {
+                rock.dialougeText.text = "You don't really love me. :(";
+            }
             rock.hand.SetActive(false);
             Debug.Log("Rock has been pet!");
             rock.SwitchSubstate(null);

@@ -25,6 +25,9 @@ public class FeedRockState : PlayerState
             else if (Random.value > 0.5f){
                 rock.StatsManager.IncreaseHunger();
             }
+            else {
+                rock.dialougeText.text = "I'm not interested in eating right now...";
+            }
             rock.food.SetActive(false);
             rock.SwitchSubstate(null);
         }

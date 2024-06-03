@@ -28,6 +28,9 @@ public class WaterRockState : PlayerState
                 rock.StatsManager.IncreaseThirst();
                 rock.StatsManager.DecreaseHygiene();
             }
+            else {
+                rock.dialougeText.text = "*the water rolls right off*";
+            }
             rock.water.SetActive(false);
             rock.SwitchSubstate(null);
         }

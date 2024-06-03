@@ -30,6 +30,9 @@ public class GroomRockState : PlayerState
             else if (Random.value > 0.5f){
                 rock.StatsManager.IncreaseHygiene();
             }
+            else {
+                rock.dialougeText.text = "*rolls away from scissors*";
+            }
             rock.scissors.SetActive(false);
             rock.SwitchSubstate(null);
         }

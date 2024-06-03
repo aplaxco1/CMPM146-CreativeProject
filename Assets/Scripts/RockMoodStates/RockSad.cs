@@ -13,7 +13,7 @@ public class RockSad : RockState
 
     public override void UpdateState(RockStateManager rock)
     {
-        if (rock.StatsManager.happinessSlider.value >= 15f) {
+        if (rock.StatsManager.happinessSlider.value > 15f) {
             rock.getHighestStat();
         }
     }
