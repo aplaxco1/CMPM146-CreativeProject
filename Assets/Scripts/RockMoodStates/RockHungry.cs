@@ -9,6 +9,7 @@ public class RockHungry : RockState
         rock.stateText.text = "Current State: Hungry";
         rock.dialougeText.text = "I'm so hungry... I just keep feeling worse. :(";
         rock.StatsManager.rateOfDecay *= 1.5f;
+        rock.dialougeText.text = "I'm hungry... :<";
         // Debug.Log("Rock is Hungry!");
     }
 
