@@ -13,7 +13,7 @@ public class StatsManager : MonoBehaviour
     private float rate = 5f;
     private float rateOfDecay;
     private float rateOfGrowth = 20f;
-    private bool isHungry = false;
+    public bool isHungry = false;
     private float decreaseInterval = 5f; //144 shld decrease to 0 over 2 hours //1800f; // 30 minutes in seconds
 
     void Start()
