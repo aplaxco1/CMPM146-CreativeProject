@@ -15,6 +15,9 @@ public class RockThirsty : RockState
         if (rock.StatsManager.happinessSlider.value >= 50f) {
             rock.SwitchState(new RockNeutral());
         }
+        if (rock.StatsManager.happinessSlider.value <= 15f) {
+            rock.SwitchState(new RockSad());
+        }
         if (rock.thirst > rock.attention || rock.thirst > rock.hunger || rock.thirst > rock.moss) {
             rock.getHighestStat();
         } 

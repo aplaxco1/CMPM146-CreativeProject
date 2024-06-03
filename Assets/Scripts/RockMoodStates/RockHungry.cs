@@ -17,6 +17,9 @@ public class RockHungry : RockState
             rock.StatsManager.rateOfDecay = rock.StatsManager.rate;
             rock.SwitchState(new RockNeutral());
         }
+        if (rock.StatsManager.happinessSlider.value <= 15f) {
+            rock.SwitchState(new RockSad());
+        }
         if (rock.hunger > rock.attention || rock.hunger > rock.thirst || rock.hunger > rock.moss) {
             rock.StatsManager.rateOfDecay = rock.StatsManager.rate;
             rock.getHighestStat();

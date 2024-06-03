@@ -15,6 +15,9 @@ public class RockMossy : RockState
         if (rock.StatsManager.happinessSlider.value >= 50f) {
             rock.SwitchState(new RockNeutral());
         }
+        if (rock.StatsManager.happinessSlider.value <= 15f) {
+            rock.SwitchState(new RockSad());
+        }
         if (rock.moss > rock.attention || rock.moss > rock.thirst || rock.moss > rock.hunger) {
             rock.getHighestStat();
         } 
