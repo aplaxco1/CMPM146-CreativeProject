@@ -7,6 +7,7 @@ public class RockBored : RockState
     public override void EnterState(RockStateManager rock)
     {
         rock.stateText.text = "Current State: Bored";
+        rock.dialougeText.text = "I'm kinda bored...";
         // Debug.Log("Rock is Bored!");
     }
 

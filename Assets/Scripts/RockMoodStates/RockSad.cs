@@ -7,6 +7,7 @@ public class RockSad : RockState
     public override void EnterState(RockStateManager rock)
     {
         rock.stateText.text = "Current State: Sad";
+        rock.dialougeText.text = "I'm really sad! :(";
         // Debug.Log("Rock is Sad!");
     }
 
