@@ -9,6 +9,7 @@ public class RockStateManager : MonoBehaviour
     public enum ex {
         happy,
         neutral,
+        neutral_closed,
         thirsty,
         hungry,
         bored,
