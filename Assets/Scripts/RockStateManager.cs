@@ -6,6 +6,16 @@ using TMPro;
 
 public class RockStateManager : MonoBehaviour
 {
+    public enum ex {
+        happy,
+        neutral,
+        thirsty,
+        hungry,
+        bored,
+        mossy,
+        sad
+    }
+
     public StatsManager StatsManager; // used to obtain values from the sliders
 
     [Header("Current Rock States")]
@@ -13,6 +23,10 @@ public class RockStateManager : MonoBehaviour
     public PlayerState currentSubState;
     public TMP_Text stateText;
     public TextMeshProUGUI dialougeText;
+
+    [Header("Rock Expressions")]
+    public GameObject rockExpressions;
+    private List<Transform> expressions = new List<Transform>();
 
     [Header("Interaction Animations")]
     // used for player interactions
@@ -30,6 +44,10 @@ public class RockStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (Transform expression in rockExpressions.transform) {
+            expressions.Add(expression);
+        }
+
         currentState = new RockNeutral();
         currentState.EnterState(this);
         currentSubState = null;
@@ -90,6 +108,17 @@ public class RockStateManager : MonoBehaviour
         }
         else {
             SwitchState(new RockMossy());
+        }
+    }
+
+    public void toggleExpression(int index) {
+        for (int i = 0; i < expressions.Count; i += 1) {
+            if (i == index) {
+                expressions[i].gameObject.SetActive(true);
+            }
+            else {
+                expressions[i].gameObject.SetActive(false);
+            }
         }
     }
 }

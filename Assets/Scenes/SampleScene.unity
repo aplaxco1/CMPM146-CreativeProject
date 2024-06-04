@@ -4700,6 +4700,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1692339905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7557461799429387180, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+  m_PrefabInstance: {fileID: 703425661310068962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752876246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5246,6 +5251,10 @@ PrefabInstance:
       propertyPath: dialougeText
       value: 
       objectReference: {fileID: 391397840}
+    - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+      propertyPath: rockExpressions
+      value: 
+      objectReference: {fileID: 1692339905}
     - target: {fileID: 434580317973275448, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
       propertyPath: m_Layer
       value: 6

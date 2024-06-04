@@ -9,6 +9,7 @@ public class RockHappy : RockState
     public override void EnterState(RockStateManager rock) {
         rock.stateText.text = "Current State: Happy";
         rock.dialougeText.text = "I'm happy! :3";
+        rock.toggleExpression((int)RockStateManager.ex.happy);
         // Debug.Log("Rock is Happy!");
     }
 
