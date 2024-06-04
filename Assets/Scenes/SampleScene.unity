@@ -652,6 +652,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &242949357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6534610507885024233, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+  m_PrefabInstance: {fileID: 703425661310068962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &243289879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,6 +5735,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+      propertyPath: mossyAnim
+      value: 
+      objectReference: {fileID: 242949357}
     - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
       propertyPath: stateText
       value: 

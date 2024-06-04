@@ -816,7 +816,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5574503, z: 1.5574503}
+  m_LocalScale: {x: 1.25, y: 1.2978752, z: 1.2978752}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1063562227314757997}
@@ -1369,6 +1369,9 @@ MonoBehaviour:
   stateText: {fileID: 0}
   dialougeText: {fileID: 0}
   rockExpressions: {fileID: 0}
+  thirstyAnim: {fileID: 0}
+  hungryAnim: {fileID: 0}
+  mossyAnim: {fileID: 0}
   hand: {fileID: 2128178402897063374}
   food: {fileID: 2230885676114972652}
   water: {fileID: 2018240406037093035}
@@ -1474,7 +1477,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5574503, z: 1.5574503}
+  m_LocalScale: {x: 1.25, y: 1.2978752, z: 1.2978752}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1063562227314757997}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroomRockState : PlayerState
 {
-    private float groomTimer = 6f;
+    private float groomTimer = 5f;
     private float animSpeed = 0.5f;
 
     private GameObject closed_scissors;

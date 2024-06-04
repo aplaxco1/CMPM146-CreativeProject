@@ -32,6 +32,7 @@ public class RockStateManager : MonoBehaviour
     [Header("Mood Expressions")]
     public GameObject thirstyAnim;
     public GameObject hungryAnim;
+    public GameObject mossyAnim;
 
     [Header("Interaction Animations")]
     // used for player interactions
