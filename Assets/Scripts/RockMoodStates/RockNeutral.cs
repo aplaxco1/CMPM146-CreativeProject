@@ -41,7 +41,6 @@ public class RockNeutral : RockState
     }
 
     void neutralBlink(RockStateManager rock) {
-        Debug.Log("BLINK");
         blinkTimer -= Time.deltaTime;
         if (blinkTimer < 0) {
             rock.toggleExpression((int)RockStateManager.ex.neutral);
