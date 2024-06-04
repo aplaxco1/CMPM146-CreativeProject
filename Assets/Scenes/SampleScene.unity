@@ -5350,6 +5350,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1597981861}
     - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+      propertyPath: thirstyAnim
+      value: 
+      objectReference: {fileID: 703425661310068963}
+    - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
       propertyPath: StatsManager
       value: 
       objectReference: {fileID: 1560702900}
@@ -5442,6 +5446,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+--- !u!1 &703425661310068963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8069865623048049608, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+  m_PrefabInstance: {fileID: 703425661310068962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

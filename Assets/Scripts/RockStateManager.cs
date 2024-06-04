@@ -29,6 +29,9 @@ public class RockStateManager : MonoBehaviour
     public GameObject rockExpressions;
     private List<Transform> expressions = new List<Transform>();
 
+    [Header("Mood Expressions")]
+    public GameObject thirstyAnim;
+
     [Header("Interaction Animations")]
     // used for player interactions
     public GameObject hand;
