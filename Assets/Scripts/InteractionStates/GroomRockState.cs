@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GroomRockState : PlayerState
 {
-    private float groomTimer = 5f;
-    private float animSpeed = 0.5f;
+    private float groomTimer = 3f;
+    private float animSpeed = 0.3f;
 
     private GameObject closed_scissors;
     private GameObject open_scissors;
@@ -14,7 +14,7 @@ public class GroomRockState : PlayerState
     {
         Debug.Log("Rock's hair is being trimmed!");
         rock.scissors.SetActive(true);
-        groomTimer = 6f;
+        groomTimer = 3f;
         closed_scissors = rock.scissors.transform.Find("closed").gameObject;
         open_scissors = rock.scissors.transform.Find("open").gameObject;
     }
