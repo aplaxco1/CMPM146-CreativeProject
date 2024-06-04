@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4131555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 322364058573356089, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+  m_PrefabInstance: {fileID: 703425661310068962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &26012116
 GameObject:
   m_ObjectHideFlags: 0
@@ -5349,6 +5354,10 @@ PrefabInstance:
       propertyPath: stateText
       value: 
       objectReference: {fileID: 1597981861}
+    - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
+      propertyPath: hungryAnim
+      value: 
+      objectReference: {fileID: 4131555}
     - target: {fileID: 233149594979851485, guid: c290dd1d40e92684a9e262ab9a11e99f, type: 3}
       propertyPath: thirstyAnim
       value: 
