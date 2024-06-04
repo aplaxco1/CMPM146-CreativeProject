@@ -7,7 +7,7 @@ public class RockMossy : RockState
     public override void EnterState(RockStateManager rock)
     {
         rock.stateText.text = "Current State: Mossy";
-        rock.dialougeText.text = "I'm covered in moss!";
+        rock.dialougeText.text = "I need a trim! :<";
         rock.toggleExpression((int)RockStateManager.ex.mossy);
         //Debug.Log("Rock is Mossy!");
     }

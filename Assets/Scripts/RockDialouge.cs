@@ -20,10 +20,10 @@ public class RockDialouge : MonoBehaviour
     void Update()
     {
         // Example of changing the text when a condition is met (e.g., pressing a key)
-        //if (StatsManager.isHungry == true)
-        //{
-        //    uiText.text = "I'm hungry!";
-        //}
+        if (RockStateManager.RockState.currentState)
+        {
+            uiText.text = "I'm hungry!";
+        }
     }
 
     // Public method to change text, can be called from other scripts or UI elements
