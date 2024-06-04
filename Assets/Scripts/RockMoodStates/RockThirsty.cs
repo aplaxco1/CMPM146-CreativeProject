@@ -7,7 +7,7 @@ public class RockThirsty : RockState
     public override void EnterState(RockStateManager rock)
     {
         rock.stateText.text = "Current State: Thirsty";
-        rock.dialougeText.text = "I really need water...";
+        rock.dialougeText.text = "I really need water... ;w;";
         rock.toggleExpression((int)RockStateManager.ex.thirsty);
         //Debug.Log("Rock is Thirsty!");
     }
