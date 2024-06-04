@@ -38,7 +38,7 @@ public class StatsManager : MonoBehaviour
             DecreaseValue(hungerSlider);
             DecreaseThirst();
             DecreaseValue(attentionSlider);
-            DecreaseValue(hygieneSlider);
+            DecreaseValueMoss(hygieneSlider);
             //checkHunger();
 
             happinessSlider.value = calculateHappiness();
@@ -50,6 +50,14 @@ public class StatsManager : MonoBehaviour
         if (slider.value > 0)
         {
             slider.value -= rateOfDecay;
+        }
+    }
+
+    void DecreaseValueMoss(Slider slider)
+    {
+        if (slider.value > 0)
+        {
+            slider.value -= rateOfDecay/2;
         }
     }
 
