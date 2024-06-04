@@ -33,6 +33,7 @@ public class RockStateManager : MonoBehaviour
     public GameObject thirstyAnim;
     public GameObject hungryAnim;
     public GameObject mossyAnim;
+    public List<GameObject> boredAnims;
 
     [Header("Interaction Animations")]
     // used for player interactions
