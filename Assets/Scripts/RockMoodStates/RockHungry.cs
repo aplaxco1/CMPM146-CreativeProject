@@ -7,9 +7,9 @@ public class RockHungry : RockState
     public override void EnterState(RockStateManager rock)
     {
         rock.stateText.text = "Current State: Hungry";
-        rock.dialougeText.text = "I'm so hungry... I just keep feeling worse. :(";
         rock.StatsManager.rateOfDecay *= 1.5f;
         rock.dialougeText.text = "I'm hungry... :<";
+        rock.toggleExpression((int)RockStateManager.ex.hungry);
         // Debug.Log("Rock is Hungry!");
     }
 

@@ -14,6 +14,7 @@ public class RockBored : RockState
     {
         rock.stateText.text = "Current State: Bored";
         rock.dialougeText.text = "I'm kinda bored...";
+        rock.toggleExpression((int)RockStateManager.ex.bored);
         // Debug.Log("Rock is Bored!");
     }
 

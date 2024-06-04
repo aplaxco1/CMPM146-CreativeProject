@@ -8,6 +8,7 @@ public class RockThirsty : RockState
     {
         rock.stateText.text = "Current State: Thirsty";
         rock.dialougeText.text = "I really need water...";
+        rock.toggleExpression((int)RockStateManager.ex.thirsty);
         //Debug.Log("Rock is Thirsty!");
     }
 

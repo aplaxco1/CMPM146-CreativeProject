@@ -8,6 +8,7 @@ public class RockSad : RockState
     {
         rock.stateText.text = "Current State: Sad";
         rock.dialougeText.text = "I'm really sad! :(";
+        rock.toggleExpression((int)RockStateManager.ex.sad);
         // Debug.Log("Rock is Sad!");
     }
 

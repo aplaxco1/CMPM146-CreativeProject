@@ -8,6 +8,7 @@ public class RockMossy : RockState
     {
         rock.stateText.text = "Current State: Mossy";
         rock.dialougeText.text = "I'm covered in moss!";
+        rock.toggleExpression((int)RockStateManager.ex.mossy);
         //Debug.Log("Rock is Mossy!");
     }
 

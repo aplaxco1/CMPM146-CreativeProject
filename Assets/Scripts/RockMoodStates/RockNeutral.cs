@@ -9,6 +9,7 @@ public class RockNeutral : RockState
     public override void EnterState(RockStateManager rock) {
         rock.stateText.text = "Current State: Neutral";
         rock.dialougeText.text = "I'm content. :)";
+        rock.toggleExpression((int)RockStateManager.ex.neutral);
         // Debug.Log("Rock is Neutral.");
     }
 
